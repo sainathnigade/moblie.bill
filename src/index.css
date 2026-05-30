@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-head: 'Inter', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-900;
+    background-image: radial-gradient(circle at top left, rgba(56, 189, 248, 0.08), transparent 25%), radial-gradient(circle at bottom right, rgba(236, 72, 153, 0.08), transparent 22%);
+  }
+
+  .dark body {
+    @apply bg-slate-950 text-slate-100;
+    background-image: radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 24%), radial-gradient(circle at bottom right, rgba(236, 72, 153, 0.12), transparent 20%);
+  }
+}
+
+/* Custom Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #101016;
+}
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 3px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #26263b;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #373754;
+}
+
+/* Dynamic progress bars transition */
+.progress-fill {
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Page fade-in animations */
+.fade-in {
+  animation: fadeIn 0.35s ease-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+
+/* Custom chart visual overlays */
+.tooltip-glow {
+  filter: drop-shadow(0 4px 8px rgba(108, 99, 255, 0.15));
+}
